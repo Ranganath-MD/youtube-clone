@@ -1,0 +1,60 @@
+// header styles
+.container{
+    margin: 0px;
+    padding: 0px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: aliceblue;
+    .brand{
+        width: 100px;
+        display: flex;
+        align-items: center;
+
+        p{
+            font-weight: 600;
+            font-size: large;
+            margin-left: 10px;
+        }
+        .img-container {
+            width: 60px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .github{
+        width: 30px;
+        img{
+            width: 100%;
+        }
+    }
+
+}
+
+// search bar
+.search-container{
+    display: inline-flex;
+    align-items: center;
+    input{
+        height: 30px;
+        width: 300px;
+    }
+    button{
+        height: 30px;
+        width: 50px;
+    }
+    @media screen and (max-width:500px){
+        input{
+        height: 30px;
+        width: 160px;
+        }
+        button{
+            height: 30px;
+            width: 30px;
+        }
+    }
+}

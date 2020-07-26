@@ -1,0 +1,26 @@
+.home_row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1.5rem;
+
+    img{
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+// popular video card
+
+.card{
+
+    .title{
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0;
+    }
+    .channel-name{
+        font-size: 14px;
+        color: grey;
+        margin-top: 5px;
+    }
+}
