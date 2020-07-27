@@ -31,7 +31,7 @@ const SearchResult = (props) => {
         <Layout>
             <Seo title="search results" description={`search results for ${params.value}`} />
             <h2>Search results</h2>
-            <SearchCard />
+            <SearchCard results={results} value={params.value}/>
         </Layout>
     )
 }
