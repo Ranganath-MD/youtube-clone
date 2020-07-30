@@ -2,19 +2,20 @@ import React, { useState } from 'react'
 import "../../styles/header.scss"
 import { Redirect } from 'react-router-dom'
 
-const SearchBar = (props) => {
+const SearchBar = () => {
     const [value, setValue] = useState("")
     const [redirect, setRedirect] = useState(false)
+    const [endpointValue, setEndpointValue] = useState("")
 
     const handleSearch = () => {
-        if(value === "") return null
+        if (value === "") return null
+        setEndpointValue(value)
         setRedirect(true)
     }
-
     return (
         <div className="search-container">
             {
-                redirect && <Redirect to={`/query=${value}`}/>
+                redirect && <Redirect to={`/query=${endpointValue}`}/>
             }
             <input
                 type="search"

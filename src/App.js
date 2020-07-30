@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 // components
 import Home from "./components/screens/Home"
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/query=:value" component={SearchResult} exact />
         <Route render={({ location }) => {
             let params = new URLSearchParams(location.search);
-            return <WatchVideo id={params.get("v")} />;
+            return <WatchVideo id={params.get("v")} exact/>;
           }}
         />
       </Switch>

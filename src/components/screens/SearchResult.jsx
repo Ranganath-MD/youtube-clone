@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import Layout from '../layouts/Layout'
 import Seo from '../layouts/Seo'
 import { useParams } from "react-router-dom"
@@ -11,7 +11,8 @@ const SearchResult = (props) => {
     const { key } = props.app
     const params = useParams()
     const results = props.results
-    useEffect(() => {
+
+    const getResults = useCallback(() => {
         youtube.get("/search", {
             params: {
                 maxResults: 25,
@@ -24,13 +25,17 @@ const SearchResult = (props) => {
                 props.setResults(response.data)
             })
             .catch(err => {
-                console.log(err)
+                window.alert("something went wrong while fetching the data")
             })
-    }, [])
+    }, [params.value, key])
+
+    useEffect(() => {
+        getResults()
+    }, [getResults])
+
     return (
         <Layout>
             <Seo title="search results" description={`search results for ${params.value}`} />
-            <h2>Search results</h2>
             <SearchCard results={results} value={params.value}/>
         </Layout>
     )

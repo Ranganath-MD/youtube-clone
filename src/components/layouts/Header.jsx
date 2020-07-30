@@ -3,23 +3,24 @@ import "../../styles/header.scss"
 import Brand from "../../images/youtube.svg"
 import Git from "../../images/github-icon.svg"
 import SearchBar from "./SearchBar"
+import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 
 const Header = ({ app }) => {
     return (
         <div className="container">
-            <div className="brand">
+            <Link to="/" className="brand" style={{ color: "black", textDecoration: "none"}}>
                 <div className="img-container">
                     <img src={Brand} alt="brand" />
                 </div>
                 <p className="brand">{app.app}</p>
-            </div>
+            </Link>
             <div>
                 <SearchBar />
             </div>
             <div>
                 <div className="github">
-                    <a href="https://github.com/Ranganath-MD/youtube-clone" target="_blank">
+                    <a href="https://github.com/Ranganath-MD/youtube-clone" target="_blank" rel="noopener noreferrer">
                         <img src={Git} alt="github" />
                     </a>
                 </div>

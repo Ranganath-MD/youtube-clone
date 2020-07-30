@@ -13,8 +13,7 @@ const Home = (props) => {
     useEffect(() => {
         youtube.get("/videos", {
             params: {
-                videoCategoryId: 26,
-                regionCode: "IN",
+                videoCategoryId: 10,
                 chart: "mostPopular",
                 maxResults: 50,
                 key: key, // google youtube api key
@@ -25,7 +24,7 @@ const Home = (props) => {
                 props.getVideos(response.data)
             })
             .catch(err => {
-                console.log(err)
+                window.alert("something went wrong while fetching the data")
             })
     }, [])
 

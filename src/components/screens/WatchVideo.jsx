@@ -33,10 +33,10 @@ const WatchVideo = (props) => {
                 props.getVideoById(response.data)
             })
             .catch(err => {
-                console.log(err)
+                window.alert("something went wrong while fetching the data")
             })
 
-    }, [id])
+    }, [props.id, key])
 
     useEffect(() => {
         // getting dummy suggestions
@@ -54,9 +54,9 @@ const WatchVideo = (props) => {
 
             })
             .catch(err => {
-                console.log(err)
+                window.alert("something went wrong while fetching the data")
             })
-    }, [])
+    }, [props.id, key])
 
     return (
         <Layout>

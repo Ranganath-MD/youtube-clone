@@ -28,7 +28,6 @@ const SearchCard = ({ results, value }) => {
                     )
                 })
             }
-
         </div>
     )
 }
