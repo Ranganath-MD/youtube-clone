@@ -7,4 +7,5 @@ built it using
 * Youtube API
 
 ScreenShot
-![screenshot of youtube clone]("./src/images/screenshot.jpg")
+
+![screenshot of youtube clone](/src/images/screenshot.jpg)
